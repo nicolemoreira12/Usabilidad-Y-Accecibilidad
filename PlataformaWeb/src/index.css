@@ -1,0 +1,123 @@
+import 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #1e1e2f;
+  color: #fff;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.btn-login {
+  background-color: #4f46e5;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 60px 40px;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.btn-primary {
+  background-color: #4f46e5;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hero-img img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Features section */
+.features {
+  padding: 50px 40px;
+  background-color: #f6f6f6;
+  text-align: center;
+}
+
+.features h2 {
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+  background-color: #1e1e2f;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
