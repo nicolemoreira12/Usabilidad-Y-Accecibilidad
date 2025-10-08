@@ -3,60 +3,193 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EduIA - Plataforma Educativa</title>
+  <title>MentorIA - Plataforma Educativa Inteligente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- Navbar -->
   <header class="navbar">
-    <div class="logo">EduIA</div>
-    <nav>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Generar Contenido</a></li>
-        <li><a href="#">Planes</a></li>
-        <li><a href="#">Contacto</a></li>
-      </ul>
-    </nav>
-    <button class="btn-login">Iniciar Sesión</button>
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        <span>MentorIA</span>
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+          <li><a href="#generar"><i class="fas fa-magic"></i> Generar Contenido</a></li>
+          <li><a href="#planes"><i class="fas fa-crown"></i> Planes</a></li>
+          <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="btn-login">
+        <i class="fas fa-user"></i>
+        Iniciar Sesión
+      </button>
+    </div>
   </header>
 
   <!-- Sección hero -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Genera contenido educativo con Inteligencia Artificial</h1>
-      <p>
-        Crea resúmenes, cuestionarios y materiales adaptados al nivel de tus estudiantes en segundos.
-      </p>
-      <button class="btn-primary">Comenzar ahora</button>
-    </div>
-    <div class="hero-img">
-      <img src="https://via.placeholder.com/450x300" alt="Educación IA" />
+  <section class="hero" id="inicio">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-sparkles"></i>
+          Potenciado por IA
+        </div>
+        <h1>Transforma la educación con <span class="bright-text">Inteligencia Artificial</span></h1>
+        <p>
+          Crea contenido educativo personalizado, resúmenes inteligentes y cuestionarios adaptativos 
+          que se ajustan al nivel de cada estudiante. El futuro de la educación está aquí.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn-primary">
+            <i class="fas fa-rocket"></i>
+            Comenzar Gratis
+          </button>
+          <button class="btn-secondary">
+            <i class="fas fa-play"></i>
+            Ver Demo
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">10K+</span>
+            <span class="stat-label">Educadores</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">50K+</span>
+            <span class="stat-label">Estudiantes</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">99%</span>
+            <span class="stat-label">Satisfacción</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-container">
+          <div class="floating-elements">
+            <div class="floating-icon" style="animation-delay: 0s;">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="floating-icon" style="animation-delay: 1s;">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="floating-icon" style="animation-delay: 2s;">
+              <i class="fas fa-book"></i>
+            </div>
+          </div>
+          <div class="hero-illustration">
+            <i class="fas fa-robot"></i>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Sección de funcionalidades -->
-  <section class="features">
-    <h2>¿Qué puedes crear?</h2>
-    <div class="features-grid">
-      <div class="card">
-        <h3>Resúmenes</h3>
-        <p>Genera resúmenes automáticos adaptados al nivel del estudiante.</p>
+  <section class="features" id="generar">
+    <div class="features-container">
+      <div class="section-header">
+        <h2>¿Qué puedes crear con <span class="gradient-text">MentorIA</span>?</h2>
+        <p>Herramientas potenciadas por IA para revolucionar tu manera de enseñar</p>
       </div>
-      <div class="card">
-        <h3>Cuestionarios</h3>
-        <p>Crea preguntas y quizzes personalizados en segundos.</p>
-      </div>
-      <div class="card">
-        <h3>Material Didáctico</h3>
-        <p>Obtén fichas educativas y contenido estructurado.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="card-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3>Resúmenes Inteligentes</h3>
+          <p>Genera resúmenes automáticos adaptados al nivel del estudiante con análisis semántico avanzado.</p>
+          <div class="card-features">
+            <span><i class="fas fa-check"></i> Análisis de texto</span>
+            <span><i class="fas fa-check"></i> Adaptación automática</span>
+            <span><i class="fas fa-check"></i> Múltiples formatos</span>
+          </div>
+        </div>
+        <div class="feature-card featured">
+          <div class="featured-badge">Popular</div>
+          <div class="card-icon">
+            <i class="fas fa-question-circle"></i>
+          </div>
+          <h3>Cuestionarios Adaptativos</h3>
+          <p>Crea preguntas y quizzes personalizados que se ajustan dinámicamente al progreso del estudiante.</p>
+          <div class="card-features">
+            <span><i class="fas fa-check"></i> Dificultad adaptativa</span>
+            <span><i class="fas fa-check"></i> Retroalimentación inteligente</span>
+            <span><i class="fas fa-check"></i> Análisis de rendimiento</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <h3>Material Didáctico</h3>
+          <p>Obtén fichas educativas, presentaciones y contenido estructurado listo para usar en clase.</p>
+          <div class="card-features">
+            <span><i class="fas fa-check"></i> Plantillas variadas</span>
+            <span><i class="fas fa-check"></i> Contenido visual</span>
+            <span><i class="fas fa-check"></i> Exportación múltiple</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>© 2025 EduIA - Todos los derechos reservados</p>
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <i class="fas fa-graduation-cap"></i>
+            <span>MentorIA</span>
+          </div>
+          <p>Transformando la educación con inteligencia artificial para crear experiencias de aprendizaje personalizadas.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Producto</h4>
+          <ul>
+            <li><a href="#">Características</a></li>
+            <li><a href="#">Precios</a></li>
+            <li><a href="#">API</a></li>
+            <li><a href="#">Integraciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Recursos</h4>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Tutoriales</a></li>
+            <li><a href="#">Soporte</a></li>
+            <li><a href="#">Comunidad</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Carreras</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Privacidad</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 MentorIA - Todos los derechos reservados. Hecho con <i class="fas fa-heart"></i> para educadores.</p>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
