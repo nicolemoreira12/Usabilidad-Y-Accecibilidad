@@ -191,5 +191,131 @@
       </div>
     </div>
   </footer>
+  
+  <!-- Menú de Accesibilidad -->
+  <button id="acc-toggle" class="acc-fab" aria-label="Abrir menú de accesibilidad" aria-controls="acc-panel" aria-expanded="false">
+    <i class="fas fa-universal-access" aria-hidden="true"></i>
+  </button>
+
+  <aside id="acc-panel" class="acc-panel" role="dialog" aria-modal="true" aria-labelledby="acc-title" tabindex="-1">
+    <header class="acc-header">
+      <h2 id="acc-title"><i class="fas fa-universal-access" aria-hidden="true"></i> Accesibilidad</h2>
+      <button id="acc-close" class="acc-close" aria-label="Cerrar menú">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+    </header>
+
+    <nav class="acc-tabs" role="tablist" aria-label="Opciones de accesibilidad">
+      <button role="tab" id="tab-visual" class="acc-tab is-active" aria-controls="panel-visual" aria-selected="true">Visual</button>
+      <button role="tab" id="tab-auditiva" class="acc-tab" aria-controls="panel-auditiva" aria-selected="false">Auditiva</button>
+      <button role="tab" id="tab-motriz" class="acc-tab" aria-controls="panel-motriz" aria-selected="false">Motriz</button>
+    </nav>
+
+    <section id="panel-visual" class="acc-section is-active" role="tabpanel" aria-labelledby="tab-visual">
+      <div class="acc-control">
+        <label class="acc-label" for="font-size-range"><i class="fas fa-text-height"></i> Tamaño de texto</label>
+        <input id="font-size-range" type="range" min="14" max="22" step="1" value="16" aria-valuemin="14" aria-valuemax="22" aria-valuenow="16" />
+        <div class="acc-hint">14px - 22px</div>
+      </div>
+
+      <div class="acc-control">
+        <label class="acc-label" for="font-family-select"><i class="fas fa-font"></i> Tipo de fuente</label>
+        <select id="font-family-select">
+          <option value="system">Sistema (Inter)</option>
+          <option value="serif">Serif (Georgia)</option>
+          <option value="dyslexic">Alta legibilidad (Lexend)</option>
+        </select>
+      </div>
+
+      <div class="acc-control acc-grid-2">
+        <label class="acc-switch">
+          <input type="checkbox" id="high-contrast" />
+          <span></span>
+          Alto contraste / Modo oscuro
+        </label>
+        <label class="acc-switch">
+          <input type="checkbox" id="highlight-links" />
+          <span></span>
+          Resaltar enlaces y foco
+        </label>
+      </div>
+
+      <div class="acc-control acc-grid-2">
+        <label class="acc-label" for="letter-spacing-range"><i class="fas fa-arrows-left-right"></i> Espacio entre letras</label>
+        <input id="letter-spacing-range" type="range" min="0" max="4" step="0.5" value="0" />
+        <label class="acc-label" for="line-height-range"><i class="fas fa-align-justify"></i> Altura de línea</label>
+        <input id="line-height-range" type="range" min="1.2" max="2" step="0.1" value="1.6" />
+      </div>
+
+      <div class="acc-control acc-grid-2">
+        <label class="acc-switch">
+          <input type="checkbox" id="big-buttons" />
+          <span></span>
+          Botones grandes
+        </label>
+        <label class="acc-switch">
+          <input type="checkbox" id="disable-animations" />
+          <span></span>
+          Desactivar animaciones
+        </label>
+      </div>
+
+      <div class="acc-control">
+        <label class="acc-label" for="accent-color"><i class="fas fa-palette"></i> Color de acento</label>
+        <input id="accent-color" type="color" value="#6366f1" />
+      </div>
+    </section>
+
+    <section id="panel-auditiva" class="acc-section" role="tabpanel" aria-labelledby="tab-auditiva" hidden>
+      <div class="acc-control acc-grid-2">
+        <button class="acc-btn" id="pause-media"><i class="fas fa-pause"></i> Pausar todo el audio/video</button>
+        <button class="acc-btn" id="resume-media"><i class="fas fa-play"></i> Reanudar multimedia</button>
+      </div>
+      <div class="acc-control">
+        <label class="acc-switch">
+          <input type="checkbox" id="mute-autoplay" />
+          <span></span>
+          Bloquear auto-reproducción
+        </label>
+      </div>
+      <div class="acc-note">Subtítulos y transcripciones dependen del contenido del video. Si existen <code>track</code> o transcripciones, se activarán automáticamente.</div>
+    </section>
+
+    <section id="panel-motriz" class="acc-section" role="tabpanel" aria-labelledby="tab-motriz" hidden>
+      <div class="acc-control acc-grid-2">
+        <label class="acc-switch">
+          <input type="checkbox" id="keyboard-mode" />
+          <span></span>
+          Navegación por teclado (foco visible)
+        </label>
+        <label class="acc-switch">
+          <input type="checkbox" id="no-smooth-scroll" />
+          <span></span>
+          Desactivar desplazamiento suave
+        </label>
+      </div>
+      <div class="acc-control acc-grid-2">
+        <label class="acc-switch">
+          <input type="checkbox" id="voice-read-selection" />
+          <span></span>
+          Lectura por voz al seleccionar
+        </label>
+        <div class="acc-kbd-help">
+          <p><strong>Atajos:</strong> Alt + = (Aumentar texto), Alt + - (Disminuir), Alt + H (Alto contraste), Alt + L (Resaltar enlaces)</p>
+        </div>
+      </div>
+    </section>
+    
+    <div class="acc-footer">
+      <button class="acc-btn secondary" id="reset-accessibility"><i class="fas fa-rotate-left"></i> Restablecer</button>
+      <button class="acc-btn primary" id="save-accessibility"><i class="fas fa-save"></i> Guardar preferencias</button>
+    </div>
+  </aside>
+
+  <!-- Región para mensajes accesibles -->
+  <div id="sr-live" class="sr-only" aria-live="polite"></div>
+
+  <!-- Script del menú de accesibilidad -->
+  <script src="accessibility.js" defer></script>
 </body>
 </html>
