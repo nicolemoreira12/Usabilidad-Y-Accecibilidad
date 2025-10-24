@@ -168,17 +168,23 @@
       document.removeEventListener('mouseup', speakSelection);
       document.removeEventListener('keyup', speakSelection);
       selectionHandlerAdded = false;
+      // Detener cualquier locución en curso al desactivar
+      try { window.speechSynthesis.cancel(); } catch {}
     }
   }
   function speakSelection(){
+    // Si la preferencia ya está desactivada, no hablar
+    if(!prefs.voiceReadSelection) { try { window.speechSynthesis.cancel(); } catch {} return; }
     const sel = window.getSelection();
     const text = sel ? sel.toString().trim() : '';
+    // Evitar lecturas accidentales por selecciones cortas o muy largas
     if(text.length < 3) return;
-    window.speechSynthesis.cancel();
+    if(text.length > 2000) return; // límite de seguridad
+    try { window.speechSynthesis.cancel(); } catch {}
     const u = new SpeechSynthesisUtterance(text);
     u.lang = 'es-ES';
     u.rate = 1; u.pitch = 1; u.volume = 1;
-    window.speechSynthesis.speak(u);
+    try { window.speechSynthesis.speak(u); } catch {}
   }
 
   // Tabs
@@ -258,7 +264,13 @@
     $('#keyboard-mode')?.addEventListener('change', (e)=>{ prefs.keyboardMode = e.target.checked; applyPrefs(); savePrefs(); });
     $('#no-smooth-scroll')?.addEventListener('change', (e)=>{ prefs.noSmoothScroll = e.target.checked; applyPrefs(); savePrefs(); });
 
-    $('#voice-read-selection')?.addEventListener('change', (e)=>{ prefs.voiceReadSelection = e.target.checked; applyPrefs(); savePrefs(); announce('Lectura por selección ' + (prefs.voiceReadSelection?'activada':'desactivada')); });
+    $('#voice-read-selection')?.addEventListener('change', (e)=>{
+      prefs.voiceReadSelection = e.target.checked;
+      // Si se desactiva, detener cualquier locución inmediatamente
+      if(!prefs.voiceReadSelection && 'speechSynthesis' in window){ try{ window.speechSynthesis.cancel(); }catch{} }
+      applyPrefs(); savePrefs();
+      announce('Lectura por selección ' + (prefs.voiceReadSelection?'activada':'desactivada'));
+    });
 
     $('#save-accessibility')?.addEventListener('click', ()=>{ savePrefs(); announce('Preferencias de accesibilidad guardadas'); });
     $('#reset-accessibility')?.addEventListener('click', ()=>{ prefs = { ...defaultPrefs }; applyPrefs(); savePrefs(); announce('Preferencias restablecidas'); });
