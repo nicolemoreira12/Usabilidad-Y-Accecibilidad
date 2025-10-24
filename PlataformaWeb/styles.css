@@ -88,6 +88,29 @@ body {
   padding: 0 var(--spacing-md);
 }
 
+/* ========== Botón Saltar al Contenido ========== */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  padding: 12px 24px;
+  background: var(--primary-color);
+  color: var(--text-white);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 20px;
+  outline: 3px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
 /* ========== Navbar ========== */
 .navbar {
   position: fixed;
